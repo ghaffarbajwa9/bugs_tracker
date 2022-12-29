@@ -1,6 +1,4 @@
 require_relative "boot"
-config.active_record.schema_format = :ruby
-
 
 require "rails/all"
 
