@@ -1,0 +1,33 @@
+<%= form_with model: user do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name, placeholder: "Mike" %>
+       <% user.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    </div>
+    <div>
+      <%= form.label :email %><br>
+      <%= form.email_field :email, placeholder: "email@email.com" %>
+       <% user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    </div>
+    <div>
+      <%= form.label :password %><br>
+      <%= form.password_field :password, placeholder: "password" %>
+       <% user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    </div>
+    <div>
+      <%= form.label :user_type %><br>
+      <%= form.select :user_type, options_for_select(User.user_types.map {|key, value| [key.titleize, User.user_types.key(value)]}, user.user_type) %>
+       <% user.errors.full_messages_for(:user_type).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    </div>
+    <div>
+    <%= form.submit%>
+    </div>
+<%end%>

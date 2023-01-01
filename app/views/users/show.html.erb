@@ -1,0 +1,10 @@
+<h1><%= @user.name%></h1>
+<p><%= @user.user_type%>
+<%= button_to "Logout", logout_path, method: :delete %>
+<ul>
+    <li> <%= link_to "Edit", edit_user_path(@user) %> </li>
+    <li><%= link_to "Destory", user_path(@user), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+    } %> </li>
+</ul>

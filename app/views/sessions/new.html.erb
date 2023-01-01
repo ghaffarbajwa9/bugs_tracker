@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<h1>Log In</h1>
+<%= form_with url: login_path do |form| %>
+ <div>
+    <%= form.label :email %><br>
+    <%= form.email_field :email, placeholder: "Please enter email" %>
+ </div>
+ <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, placeholder: "Please enter password" %>
+ </div>
+ <div>
+    <%= form.submit "Login" %>
+ </div>
+<% end %>
