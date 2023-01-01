@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   # get "log_in", to: "users#login"
   root "main#index"
+  get "about", to: "main#index"
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
