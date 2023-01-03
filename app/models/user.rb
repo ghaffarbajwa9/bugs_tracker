@@ -8,4 +8,6 @@ class User < ApplicationRecord
                       uniqueness: true
     validates :password, presence: true
     validates :user_type, presence: true
+
+    has_many :projects
 end

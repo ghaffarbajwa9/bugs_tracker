@@ -1,3 +1,12 @@
+<p id="notice"><%= notice %></p>
 <div class="d-flex align-items-center justify-content-center">
-    
+  <% if Current.user %>
+    <% if Current.user.user_type=="manager"%>
+        <h1>You are <%= Current.user.user_type%></h1>
+    <% elsif Current.user.user_type="qa" %>
+        <h1>You are <%= Current.user.user_type%></h1>
+    <%else%>
+        <h1>You are <%= Current.user.user_type%></h1>
+    <% end %>
+ <%end%>
 </div>
